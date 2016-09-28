@@ -1,70 +1,23 @@
-<!DOCTYPE html>
+<!doctype html>
 <html>
-
-
-
-<head>
-
-	<title>Engineering Adventures</title>
-
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script> 
-
-	<!-- favicon for FF, Chrome, Opera -->
-	<link rel="icon" type="image/png" href="Images/pitt_logo.png" sizes="16x16">
-	<link rel="icon" type="image/png" href="Images/pitt_logo.png" sizes="32x32">
-
-	<!-- favicon for IE -->
-	<link rel="icon" type="image/x-icon" href="Images/pitt_logo.ico" >
-	<link rel="shortcut icon" type="image/x-icon" href="Images/pitt_logo.ico"/>
-
-	<!-- adding smooth scrolling for menu clicks -->
-	<script>
-	$(document).ready(function(){
-	  // Add smooth scrolling to all links
-	  $("a").on('click', function(event) {
-
-	    // Prevent default anchor click behavior
-	    event.preventDefault();
-
-	    // Store hash
-	    var hash = this.hash;
-
-	    // Using jQuery's animate() method to add smooth page scroll
-	    // The optional number (800) specifies the number of milliseconds it takes to scroll to the specified area
-	    $('html, body').animate({
-	      scrollTop: $(hash).offset().top
-	    }, 800, function(){
-	   
-	      // Add hash (#) to URL when done scrolling (default click behavior)
-	      window.location.hash = hash;
-	    });
-	  });
-	});
-	</script>
-
-</head>
-
-
-
-
-<frameset cols="25%,*" frameborder=no framespacing=0 border=0>
-	
-	<!-- The 25% wide column, will contain title and menu bar -->
-    <frameset rows="25%,*,70" > 
-        <frame src="title.html" name="title"></frame>
-        <frame src="menu.html" name="menu"></frame>
-        <frame src="about_images.html" name="about_images"></frame>
-    </frameset>
-
-    <!-- The 75% wide column, will contain body and update bar at bottom -->
-    <frameset>
-	    <frame src="main.html" name="body"></frame>
-	</frameset>
-
-</frameset>
-
-
-
-
-
+	<head>
+		<meta charset="utf-8">
+		<title>J. Fang's Personal Webpage</title>
+		<link href="/css/styles.css" rel="stylesheet">
+		<!--script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"--><!--/script-->
+		<!-- favicon for FF, Chrome, Opera -->
+		<link rel="icon" href="Images/pitt_logo.png" sizes="16x16">
+		<link rel="icon" href="Images/pitt_logo.png" sizes="32x32">
+		<!-- favicon for IE -->
+		<link rel="icon" href="Images/pitt_logo.ico" >
+		<link rel="shortcut icon" href="Images/pitt_logo.ico"/>
+		<style>
+			body {
+				background-color: #d9d9d9;
+			}
+		</style>
+	</head>
+	<body>
+		<nav></nav>
+	</body>
 </html>
