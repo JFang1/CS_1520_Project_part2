@@ -2,102 +2,105 @@
 <html>
 
 	<head>
+
 		<meta charset="utf-8">
 		<title>J. Fang's Personal Webpage</title>
-		<link href="./css/styles.css" rel="stylesheet">
-		<!--script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"--><!--/script-->
+		<link rel="stylesheet" href="./css/styles.css">
 		<!-- favicon for FF, Chrome, Opera -->
-		<link rel="icon" href="Images/pitt_logo.png" sizes="16x16">
-		<link rel="icon" href="Images/pitt_logo.png" sizes="32x32">
+		<link rel="icon" href="./images/pitt_logo.png" sizes="16x16">
 		<!-- favicon for IE -->
-		<link rel="icon" href="Images/pitt_logo.ico" >
+		<link rel="icon" href="./images/pitt_logo.ico" >
 		<link rel="shortcut icon" href="Images/pitt_logo.ico"/>
+
 	</head>
 
 	<body>
 
-		<section class="home">
-			<h1>The Personal Webpage of J. Fang</h1>
-			<header class="home">
+		<div id="home">
+			<header class="header">
+				<br />
+				<h1>Jennifer Fang</h1>
 			  <nav>
 			    <ul>
-				  <li>
-				    <a href="#">Home</a>
-				  </li>
-				  <li>
-				    <a href="#">About Me</a>
-				  </li>
-					<li>
-				    <a href="#">Current Projects</a>
-				  </li>
-				  <li>
-				    <a href="#">Resume</a>
-				  </li>
-				  <li>
-				    <a href="#">Links</a>
-				  </li>
-					<li>
-				    <a href="#">Contact Me</a>
-				  </li>
-				</ul>
+					  <li>
+					    <a href="#home">Home</a>
+					  </li>
+						<li>
+							;VerticalSeparator
+						</li>
+					  <li>
+					    <a href="#about">About</a>
+					  </li>
+						<li>
+							;VerticalSeparator
+						</li>
+						<li>
+					    <a href="#currentProjects">Current Projects</a>
+					  </li>
+						<li>
+							;VerticalSeparator
+						</li>
+					  <li>
+					    <a href="#links">Links</a>
+					  </li>
+						<li>
+							;VerticalSeparator
+						</li>
+						<li>
+					    <a href="#contact">Contact</a>
+					  </li>
+					</ul>
 			  </nav>
 			</header>
+		</div>
+
+		<section id="aboutMe">
+			<h2>About Me</h2>
 		</section>
 
-		<section class="about-me">
-			<h1>About Me</h1>
+		<section id="currentProjects">
+			<h2>Current Projects</h2>
 		</section>
 
-		<section class="current-projects">
-			<h1>Current Projects</h1>
+		<section id="links">
+			<h2>Links</h2>
 		</section>
 
-		<section class="resume">
-			<h1>Resume</h1>
-		</section>
-
-		<section class="links">
-			<h1>Links</h1>
-		</section>
-
-		<section class="contact-me">
-			<h1>Contact Me</h1>
-			<form id="greatForm">
-      <fieldset class="radio-buttons">
-        <div class="do-you-even">
-          "Do you even lift?"<br>
-          <input type="radio" name="lift-status" value="Yea"> Yeah, brah!<br>
-          <input type="radio" name="lift-status" value="Nah"> Hell nah, brah!<br>
-          <input type="radio" name="lift-status" value="Yes"> Yes<br>
-          <input type="radio" name="lift-status" value="No"> No<br>
-          <input type="radio" name="lift-status" value="PleaseNo"> Please, no<br>
-          <br>
-        </div>
-        <div class="can-you-even">
-          How do you feel about cardio?<br>
-          <input type="radio" name="cardio-status" value="Alright"> It's alright.<br>
-          <input type="radio" name="cardio-status" value="No"> No!<br>
-          <input type="radio" name="cardio-status" value="Marathon"> The idea of running a Death Valley marathon in which people actually die seriously intriques me.<br>
-        </div>
-      </fieldset>
-      <fieldset class="check-these-boxes">
-        <div class="check-what-applies">
-          Select all that apply:<br>
-          <input type="checkbox" name="what-applies" value="Miserable"> I am extremely miserable and hate everything.<br>
-          <input type="checkbox" name="what-applies" value="Miserable"> I am not that miserable but still hate everything.
-        </div>
-      </fieldset>
-      <fieldset class="text-holder">
-        <div class="your-problems-explanation">
-          Why do you always run away from your problems?<br>
-          <textarea cols=40% rows="10" name="problem-status" id="problemStatus"></textarea>
-        </div>
-      </fieldset>
-      <input type="submit" value="Submit!" onclick=validate() id="submitButton">
-      <br>
-    </form>
-    <div id="errorSection"></div>
-
+		<section id="contact">
+			<h2>Contact</h2>
+			<p>
+				You may email me at jmf133@pitt.edu or use the handy, dandy form below.
+			</p>
+			<form id="contactForm">
+	      <fieldset class="short-text-input">
+	        <div class="name">
+	          Your name:
+	          <input type="text" id="contactNameInput"><br>
+	        </div>
+	        <div class="email">
+	          Your email address:
+	          <input type="text" id="emailAddressInput"><br>
+	        </div>
+	      </fieldset>
+				<fieldset class="radio-options">
+					<div class="subject">
+						Subject of this message: <br>
+						<input type="radio" name="message-subject" value="website"> Website (questions, comments)<br>
+						<input type="radio" name="message-subject" value="academics"> Academics (class projects, homework)<br>
+						<input type="radio" name="message-subject" value="employment"> Employment<br>
+						<input type="radio" name="message-subject" value="other"> Other<br>
+					</div>
+				</fieldset>
+	      <fieldset class="text-holder">
+	        <div class="the-message">
+	          Message:<br>
+	          <textarea cols=40% rows="10" name="messageArea" id="message"></textarea>
+	        </div>
+	      </fieldset>
+	      <input type="submit" value="Submit!" onclick=validate() id="submitButton">
+	      <br>
+    	</form>
+			<div id="errorSection"></div>
 		</section>
 
 		<noscript>Please do not block JavaScript in your browser.</noscript>
