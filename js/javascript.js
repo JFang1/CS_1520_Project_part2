@@ -2,7 +2,7 @@ $(document).ready(function(){
 
   // Adds smooth scrolling to links
   // Referenced from http://www.w3schools.com/jquery/tryit.asp?filename=tryjquery_eff_animate_smoothscroll
-  $('a').on('click', function(event) {
+  $('#inPage').on('click', function(event) {
     event.preventDefault(); // prevents default behavior upon link click
     var hash = this.hash; // hash refers to ID'd locations in the page
     $('html, body').animate({
@@ -86,7 +86,6 @@ function validate() {
   // print validation outcome
   if (!errorsPresentInDoc) {
     document.getElementById('contactForm').innerHTML='<p id=\'successId\'>The information has been submitted!</p>';
-    document.getElementById('errorSection').innerHTML='';
   }
   else {
     document.getElementById('errorSection').innerHTML='Error!\n' + errorArr.toString();
