@@ -14,7 +14,7 @@ $(document).ready(function(){
 
   // Implements a floating nav bar
   // Referenced from http://www.dwuser.com/education/content/creating-a-floating-navigation-menu/
-  $(function() {
+$(function() {
     var nav = $('nav');
     var originalNavBarPosition = nav.offset().top;
     var $windowVar = $(window);
