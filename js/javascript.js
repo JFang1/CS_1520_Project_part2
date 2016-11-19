@@ -1,20 +1,26 @@
 $(document).ready(function(){
+
   // Adds smooth scrolling to links
   // Referenced from http://www.w3schools.com/jquery/tryit.asp?filename=tryjquery_eff_animate_smoothscroll
-  $('#inPage').on('click', function(event) {
-    event.preventDefault(); // prevents default behavior upon link click
-    var hash = this.hash; // hash refers to ID'd locations in the page
-    $('html, body').animate({
-      scrollTop: $(hash).offset().top
-    }, 400, function(){ // 400 ms is time of the animation
-      window.location.hash = hash;
-    });
+  $('.inPage').on('click', function(event) {
+    // Make sure this.hash has a value before overriding default behavior
+    if (this.hash !== "") {
+      event.preventDefault(); // prevents default behavior upon link click
+      var hash = this.hash; // hash refers to the anchor locations in the page--called "hash" because they are indicated by # in the URL
+      $('html, body').animate({
+        scrollTop: $(hash).offset().top
+      }, 400, function(){ // 400 ms is time of the animation
+        window.location.hash = hash;
+      });
+    }
   });
 
   $('#contactForm').submit(function(e) {
     e.preventDefault();
+    validate();
   });
 });
+
 
 // Validates form
 function validate() {

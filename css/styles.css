@@ -1,37 +1,29 @@
-/* Latest compiled and minified CSS
-link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" */
-
 body {
   background: url('../images/lovelace_analytical_machine2.png') no-repeat fixed center / cover;
 }
 
 .bg-2 {
   background: url('../images/lovelace_bernoulli_number_algorithm3.png') no-repeat fixed center / cover;
+  padding: 40px;
+  margin-top: 40px;
 }
 
-.bg-3 {
+.bg-footer {
   background-color: black;
+  padding-top: 70px;
+  padding-bottom: 70px;
 }
 
 .container {
   padding: 50px;
 }
 
-#sep {
-  color: #f9c;
-  margin: 1.5rem;
+h1, h2 {
+  color: #fcf !important;
 }
 
-h1 {
-  color: #f9c;
-}
-
-h2, h3 {
-  color: #fff;
-}
-
-p {
-  color: #fff;
+p, h3 {
+  color: #fff !important;
 }
 
 /* Styles for the form */
@@ -40,10 +32,18 @@ form {
   color: #fff;
 }
 
+.black-text {
+  color: black !important;
+}
+
 #errorSection {
-  color: red;
+  color: red !important;
 }
 
 #successId {
-  color: green;
+  color: green !important;
+}
+
+#submitButton {
+  color: black !important;
 }

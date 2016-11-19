@@ -27,22 +27,23 @@
 						<span class="icon-bar"></span>
 						<span class="icon-bar"></span>
 					</button>
-					<a class="navbar-brand" href="#">J.M. Fang</a>
+					<a class="navbar-brand" href="#home">J.M. Fang</a>
 				</div>
 				<div class="collapse navbar-collapse" id="myNavbar">
 					<ul class="nav navbar-nav">
-						<li class="active"><a href="#">Home</a></li>
-						<li><a href="#about" id="inPage">About</a></li>
-						<li><a href="#currentProjects" id="inPage">Current Projects</a></li>
-						<li><a href="#links" id="inPage">Links</a></li>
-						<li><a href="#contact" id="inPage">Contact</a></li>
+						<li><a href="#about" class="inPage">About</a></li>
+						<li><a href="#currentProjects" class="inPage">Current Projects</a></li>
+						<li><a href="#links" class="inPage">Links</a></li>
+						<li><a href="#contact" class="inPage">Contact</a></li>
 					</ul>
 				</div> <!-- div class="collapse navbar-collapse" id="myNavbar" -->
 			</div> <!-- div class="container-fluid" -->
 		</nav>
 
-    <div class="container" id="home">
-		</div> <!--div class="container" id="home"-->
+		<div class="jumbotron bg-2" id="home">
+			<h1 class="webpage-header">J.M. Fang<br></h1>
+			<h3>My personal webpage</h3>
+		</div>
 
 		<div class="container" id="about">
 			<h2>About</h2>
@@ -58,6 +59,13 @@
 				</div>
 			</div>
 		</div> <!--div class="container" id="about"-->
+
+		<div class="bg-2" id="saganQuote">
+			<blockquote class="blockquote-reverse">
+				<p><i>For me, the most ironic token of [the first human moon landing] is the plaque signed by President Richard M. Nixon that Apollo 11 took to the moon.  It reads, "We came in peace for all Mankind."  As the United States was dropping seven and a half megatons of conventional explosives on small nations in Southeast Asia, we congratulated ourselves on our humanity.  We would harm no one on a lifeless rock.</i></p>
+				<footer>Carl Sagan</footer>
+			</blockquote>
+		</div>
 
 		<div class="container" id="currentProjects">
 			<h2>Current Projects</h2>
@@ -149,11 +157,11 @@
 	      <fieldset class="short-text-input">
 	        <div class="name">
 	          Your name:
-	          <input type="text" name="contact-name" id="contactNameInput"><br>
+	          <input type="text" name="contact-name" id="contactNameInput" class="black-text"><br>
 	        </div>
 	        <div class="email">
 	          Your email address:
-	          <input type="text" name="email-address" id="emailAddressInput"><br>
+	          <input type="text" name="email-address" id="emailAddressInput" class="black-text"><br>
 	        </div>
 	      </fieldset>
 				<fieldset class="radio-options">
@@ -168,31 +176,25 @@
 	      <fieldset class="text-holder">
 	        <div class="the-message">
 	          Message:<br>
-	          <textarea cols=40% rows="10" name="messageArea" id="message"></textarea>
+	          <textarea cols=40% rows="10" name="messageArea" id="message" class="black-text"></textarea>
 	        </div>
 	      </fieldset>
 				<div id="errorSection"></div>
-	      <input type="submit" value="Submit!" onclick=validate() id="submitButton">
+	      <input type="submit" value="Submit!" id="submitButton">
     	</form>
 		</div> <!--div class="container" id="contact"-->
 
-		<div class="jumbotron bg-2">
-			<blockquote class="blockquote-reverse">
-	      <p><i>For me, the most ironic token of [the first human moon landing] is the plaque signed by President Richard M. Nixon that Apollo 11 took to the moon.  It reads, "We came in peace for all Mankind."  As the United States was dropping seven and a half megatons of conventional explosives on small nations in Southeast Asia, we congratulated ourselves on our humanity.  We would harm no one on a lifeless rock.</i></p>
-	      <footer>Carl Sagan</footer>
-	    </blockquote>
-		</div>
-
-		<div class="footer bg-3">
+		<footer class="container-fluid bg-footer text-center">
 			<p>&copy; 2016 J.M. Fang</p>
-		</div>
+		</footer>
 
 		<noscript>Please do not block JavaScript in your browser.</noscript>
 
-		<script src="./js/javascript.js"></script>
-    <!-- jQuery library -->
+    <!-- Bootstrap's jQuery library -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-    <!-- Latest compiled JavaScript -->
+		<!-- my JavaScript -->
+		<script src="./js/javascript.js"></script>
+    <!-- Bootstrap's latest compiled JavaScript -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
 	</body>
