@@ -152,7 +152,7 @@
 		<div class="container" id="madLibs">
 			<h2>Mad Libs</h2>
 			<div class="col-sm-6">
-				<form id="madLibsForm" action="madLibs.php method="POST">
+				<form id="madLibsForm" action="#madLibs" method="POST">
 					A noun:
 					<input type="text" name="first-noun" id="firstNoun" class="black-text"><br>
 					Another noun:
@@ -163,11 +163,36 @@
 					<input type="text" name="fourth-noun" id="fourthNoun" class="black-text"><br>
 					An adjective:
 					<input type="text" name="adjective" id="adjective" class="black-text"><br>
-					. . .<br>
+					<br><br>
 					<input type="submit" value="Show this mad lib!" id="madLibButton" class="black-text">
 				</form>
 			</div>
 			<div class="col-sm-6"  id="hideThisAtFirst">
+				<?php
+					$noun1 = $_REQUEST['first-noun'];
+					$noun2 = $_REQUEST['second-noun'];
+					$noun3 = $_REQUEST['third-noun'];
+					$noun4 = $_REQUEST['fourth-noun'];
+					$adjective5 = $_REQUEST['adjective'];
+					if (empty($noun1) || empty($noun2) || empty($noun3) || empty($noun4) || empty($adjective5)) {
+						echo "Please fill in all the blanks!";
+					}
+					else { // else, everything is filled in
+						$text = file("other_files/madLibs.txt");
+						foreach ($text as $line) {
+							// trim off newline
+							$line = rtrim($line);
+							// change the variables in the .txt to their proper values
+							$line = preg_replace("/NOUN1/i", $noun1, $line);
+							$line = preg_replace("/NOUN2/i", $noun2, $line);
+							$line = preg_replace("/NOUN3/i", $noun3, $line);
+							$line = preg_replace("/NOUN4/i", $noun4, $line);
+							$line = preg_replace("/ADJECTIVE5/i", $adjective5, $line);
+							// print out the line
+							echo $line;
+						}
+					} // end else condition
+				?>
 			</div>
 		</div> <!--div class="container" id="mad-libs"-->
 

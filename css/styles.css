@@ -32,8 +32,22 @@ form {
   color: #fff;
 }
 
+#hideThisAtFirst {
+  background-color: black;
+  color: black;
+}
+
 .black-text {
   color: black !important;
+}
+
+.white-text {
+  color: white;
+}
+
+#madLibQuote {
+  color: white !important;
+  font: 1rem;
 }
 
 #errorSection {
