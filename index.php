@@ -34,6 +34,7 @@
 						<li><a href="#about" class="inPage">About</a></li>
 						<li><a href="#currentProjects" class="inPage">Current Projects</a></li>
 						<li><a href="#links" class="inPage">Links</a></li>
+						<li><a href="#madLibs" class="inPage">Mad Libs</a></li>
 						<li><a href="#contact" class="inPage">Contact</a></li>
 					</ul>
 				</div> <!-- div class="collapse navbar-collapse" id="myNavbar" -->
@@ -147,6 +148,28 @@
       	</div>
 			</div> <!--div class="panel-group" id="accordion"-->
 		</div> <!--div class="container" id="links"-->
+
+		<div class="container" id="madLibs">
+			<h2>Mad Libs</h2>
+			<div class="col-sm-6">
+				<form id="madLibsForm" action="madLibs.php method="POST">
+					A noun:
+					<input type="text" name="first-noun" id="firstNoun" class="black-text"><br>
+					Another noun:
+					<input type="text" name="second-noun" id="secondNoun" class="black-text"><br>
+					Yet another noun:
+					<input type="text" name="third-noun" id="thirdNoun" class="black-text"><br>
+					A different noun:
+					<input type="text" name="fourth-noun" id="fourthNoun" class="black-text"><br>
+					An adjective:
+					<input type="text" name="adjective" id="adjective" class="black-text"><br>
+					. . .<br>
+					<input type="submit" value="Show this mad lib!" id="madLibButton" class="black-text">
+				</form>
+			</div>
+			<div class="col-sm-6"  id="hideThisAtFirst">
+			</div>
+		</div> <!--div class="container" id="mad-libs"-->
 
 		<div class="container" id="contact">
 			<h2>Contact</h2>

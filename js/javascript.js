@@ -15,9 +15,18 @@ $(document).ready(function(){
     }
   });
 
+  $('#hideThisAtFirst').ready(function(){
+    $(this).hide();
+  });
+
   $('#contactForm').submit(function(e) {
     e.preventDefault();
     validate();
+  });
+
+  $('#madLibs').submit(function(e) {
+    e.preventDefault();
+    checkLibs();
   });
 });
 
@@ -63,6 +72,51 @@ function validate() {
   }
 
   // print validation outcome
+  if (!errorsPresentInDoc) {
+    document.getElementById('contactForm').innerHTML='<p id=\'successId\'>The information has been submitted!</p>';
+  }
+  else {
+    document.getElementById('errorSection').innerHTML='Error!\n' + errorArr.toString();
+  }
+
+  return false;
+};
+
+function checkLibs() {
+  var errorsPresentInDocML = 0;
+  var noun1 = document.getElementById('firstNoun').value;
+  var noun2 = document.getElementById('secondNoun').value;
+  var noun3 = document.getElementById('thirdNoun').value;
+  var noun4 = document.getElementById('fourthNoun').value;
+  var adjectiveV = document.getElementById('adjective').value;
+  var errorArrML = [];
+
+  if (noun1 == '' || noun1 == null) {
+    errorArr.push('<br>You must enter a noun in the first box');
+    errorsPresentInDoc = 1;
+  }
+
+  if (noun2 == '' || noun2 == null) {
+    errorArr.push('<br>You must enter a noun in the second box');
+    errorsPresentInDoc = 1;
+  }
+
+  if (noun3 == '' || noun3 == null) {
+    errorArr.push('<br>You must enter a noun in the third box');
+    errorsPresentInDoc = 1;
+  }
+
+  if (noun4 == '' || noun4 == null) {
+    errorArr.push('<br>You must enter a noun in the fourth box');
+    errorsPresentInDoc = 1;
+  }
+
+  if (adjectiveV == '' || adjectiveV == null) {
+    errorArr.push('<br>You must enter an adjective in the fifth box');
+    errorsPresentInDoc = 1;
+  }
+
+  // print outcome
   if (!errorsPresentInDoc) {
     document.getElementById('contactForm').innerHTML='<p id=\'successId\'>The information has been submitted!</p>';
   }
