@@ -53,7 +53,7 @@
   				<img class="img-responsive" src="./images/me_with_robot_snake.jpg" alt="[picture of me with robot]">
 				</div>
 				<div class="col-sm-8">
-	  			<p>I am currently a computer engineering student scheduled to graduate in April 2017 and am open to pretty much anything.</p>
+	  			<p><br>I am currently a computer engineering student scheduled to graduate in April 2017 and am open to pretty much anything.</p>
 	  			<p>I actively participate in outreach events with the Society of Women Engineers (SWE), have mentored underclassmen,
 	  				and am currently serving as the Vice President for Pitt's chapter of Eta Kappa Nu, the IEEE honor society.</p>
 	  			<a href="./other_files/resume.pdf">Click here for my resume</a>
@@ -164,7 +164,7 @@
 					An adjective:
 					<input type="text" name="adjective" id="adjective" class="black-text"><br>
 					<br><br>
-					<input type="submit" value="Show this mad lib!" id="madLibButton" class="black-text">
+					<input type="submit" value="Show this mad lib!" id="madLibButton" class="black-text"><br>
 				</form>
 			</div>
 			<div class="col-sm-6"  id="hideThisAtFirst">
