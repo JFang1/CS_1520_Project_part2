@@ -1,8 +1,10 @@
-$(document).ready(function(){
+$(document).ready(function() {
 
+  $(".navbar").hide();
+  $('#enter').hide();
   // Adds smooth scrolling to links
   // Referenced from http://www.w3schools.com/jquery/tryit.asp?filename=tryjquery_eff_animate_smoothscroll
-  $('.inPage').on('click', function(event) {
+  $('.in-page').on('click', function(event) {
     // Make sure this.hash has a value before overriding default behavior
     if (this.hash !== "") {
       event.preventDefault(); // prevents default behavior upon link click
@@ -13,6 +15,21 @@ $(document).ready(function(){
         window.location.hash = hash;
       });
     }
+  });
+
+  // Referenced from http://stackoverflow.com/questions/26266243/hide-div-when-in-top-of-page-with-jquery
+  $(window).on("scroll", function() {
+    var pagePos = $(window).scrollTop();
+    if (pagePos <= 0) {
+        $(".navbar").hide();
+    }
+    else {
+        $(".navbar").fadeIn();
+    }
+  });
+
+  $('#arrow').hover(function() {
+    $('#enter').fadeIn();
   });
 
   $('#contactForm').submit(function(e) {

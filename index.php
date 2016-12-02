@@ -27,23 +27,27 @@
 						<span class="icon-bar"></span>
 						<span class="icon-bar"></span>
 					</button>
-					<a class="navbar-brand" href="#home">J.M. Fang</a>
+					<a class="navbar-brand inPagge" href="#home">J.M. Fang</a>
 				</div>
 				<div class="collapse navbar-collapse" id="myNavbar">
-					<ul class="nav navbar-nav">
-						<li><a href="#about" class="inPage">About</a></li>
-						<li><a href="#currentProjects" class="inPage">Current Projects</a></li>
-						<li><a href="#links" class="inPage">Links</a></li>
-						<li><a href="#madLibs" class="inPage">Mad Libs</a></li>
-						<li><a href="#contact" class="inPage">Contact</a></li>
+					<ul class="nav navbar-nav navbar-right">
+						<li><a href="#about" class="in-page">About</a></li>
+						<li><a href="#currentProjects" class="in-page">Current Projects</a></li>
+						<li><a href="#links" class="in-page">Links</a></li>
+						<li><a href="#madLibs" class="in-page">Mad Libs</a></li>
+						<li><a href="#contact" class="in-page">Contact</a></li>
 					</ul>
 				</div> <!-- div class="collapse navbar-collapse" id="myNavbar" -->
 			</div> <!-- div class="container-fluid" -->
 		</nav>
 
-		<div class="jumbotron bg-2" id="home">
-			<h1 class="webpage-header">J.M. Fang<br></h1>
-			<h3>My personal webpage</h3>
+		<div class="jumbotron bg-2 text-center" id="home">
+			<div id="openingSection">
+				<h1 class="webpage-header">J.M. Fang<br></h1>
+				<h3>My personal webpage</h3><br><br>
+				<h1 id="arrow"><a href="#about" class="in-page">&seswar;</a></h1>
+				<h3 class="white-text" id="enter">Enter</h3>
+			</div>
 		</div>
 
 		<div class="container" id="about">
@@ -61,9 +65,9 @@
 			</div>
 		</div> <!--div class="container" id="about"-->
 
-		<div class="bg-2" id="saganQuote">
+		<div class="container-fluid bg-2" id="saganQuote">
 			<blockquote class="blockquote-reverse">
-				<p><i>For me, the most ironic token of [the first human moon landing] is the plaque signed by President Richard M. Nixon that Apollo 11 took to the moon.  It reads, "We came in peace for all Mankind."  As the United States was dropping seven and a half megatons of conventional explosives on small nations in Southeast Asia, we congratulated ourselves on our humanity.  We would harm no one on a lifeless rock.</i></p>
+				<p><i>"For me, the most ironic token of [the first human moon landing] is the plaque signed by President Richard M. Nixon that Apollo 11 took to the moon.  It reads, 'We came in peace for all Mankind.'  As the United States was dropping seven and a half megatons of conventional explosives on small nations in Southeast Asia, we congratulated ourselves on our humanity.  We would harm no one on a lifeless rock."</i></p>
 				<footer>Carl Sagan</footer>
 			</blockquote>
 		</div>
@@ -151,6 +155,7 @@
 
 		<div class="container" id="madLibs">
 			<h2>Mad Libs</h2>
+			<p>Fill in each of the spaces below. &#9998;</p>
 			<div class="col-sm-6">
 				<form id="madLibsForm" action="#madLibs" method="POST">
 					A noun:
@@ -164,7 +169,7 @@
 					An adjective:
 					<input type="text" name="adjective" id="adjective" class="black-text"><br>
 					<br><br>
-					<input type="submit" value="Show this mad lib!" id="madLibButton" class="black-text"><br>
+					<input type="submit" value="Show this mad lib!" id="madLibButton" class="black-text"><br><br>
 				</form>
 			</div>
 			<div class="col-sm-6"  id="hideThisAtFirst">
@@ -198,9 +203,7 @@
 
 		<div class="container" id="contact">
 			<h2>Contact</h2>
-			<p>
-				You may email me at jmf133@pitt.edu or use the handy, dandy form below.
-			</p>
+			<p>&#9993; You may email me at <a href="mailto:jmf133@pitt.edu">jmf133@pitt.edu</a> or use the handy, dandy form below.</p>
 			<form id="contactForm" action="mailto:jmf133@pitt.edu" method="post">
 	      <fieldset class="short-text-input">
 	        <div class="name">
