@@ -1,7 +1,9 @@
-$(document).ready(function() {
+(function() {
+    $(".navbar").hide();
+    $('#enter').hide();
+})();
 
-  $(".navbar").hide();
-  $('#enter').hide();
+$(document).ready(function() {
   // Adds smooth scrolling to links
   // Referenced from http://www.w3schools.com/jquery/tryit.asp?filename=tryjquery_eff_animate_smoothscroll
   $('.in-page').on('click', function(event) {

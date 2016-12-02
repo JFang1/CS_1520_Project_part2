@@ -14,7 +14,7 @@ body {
 }
 
 .container {
-  padding: 50px;
+  padding: 5% !important;
 }
 
 .navbar-inverse {
@@ -70,7 +70,7 @@ form {
 
 #madLibQuote {
   color: white !important;
-  font: 1rem;
+  font-size: 1rem;
 }
 
 #errorSection {
