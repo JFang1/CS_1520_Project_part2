@@ -34,9 +34,58 @@ $(document).ready(function() {
     $('#enter').fadeIn();
   });
 
-  $('#contactForm').submit(function(e) {
-    e.preventDefault();
-    validate();
+  $('#contactForm').submit(function(event) {
+    event.preventDefault();
+
+    var radioErrorsNotPresent = 0;
+    var errorsPresentInDoc = 0;
+    var nameV = document.getElementById('contactNameInput').value;
+    var emailV = document.getElementById('emailAddressInput').value;
+    var subjectV = document.getElementsByName('message-subject');
+    var messageV = document.getElementById('message').value;
+    var errorArr = [];
+
+    // check name
+    if (nameV == '' || nameV == null) {
+      errorArr.push('<br>You must enter your name');
+      errorsPresentInDoc = 1;
+    }
+
+    // check email
+    if (emailV == '' || emailV == null) {
+      errorArr.push('<br>You must enter your email address');
+      errorsPresentInDoc = 1;
+    }
+
+    // check subject radios
+    for (var j=0; j<subjectV.length; j++) {
+      if (subjectV[j].checked) {
+        radioErrorsNotPresent = 1;
+        break;
+      }
+    }
+    if (!radioErrorsNotPresent)  {
+      errorArr.push('<br>You must select a subject');
+      errorsPresentInDoc = 1;
+    }
+
+    // check message
+    if (messageV == '' || messageV == null) {
+      errorArr.push('<br>You must enter a message');
+      errorsPresentInDoc = 1;
+    }
+
+    // print validation outcome
+    if (!errorsPresentInDoc) {
+      document.getElementById('contactForm').innerHTML='<p id=\'successId\'>The information has been submitted!</p>';
+    }
+    else {
+      document.getElementById('errorSection').innerHTML='Error!\n' + errorArr.toString();
+    }
+
+    submit();
+
+    return false;
   });
 
   $('#madLibsForm').submit(function(e) {
@@ -44,99 +93,27 @@ $(document).ready(function() {
   });
 });
 
+function submit() {
+  var ajaxSubmit = function(formEl) {
+  // fetch where we want to submit the form to
+  var url = $(formEl).attr('action');
 
-// Validates form
-function validate() {
+  // fetch the data for the form
+  var data = $(formEl).serializeArray();
 
-  var radioErrorsNotPresent = 0;
-  var errorsPresentInDoc = 0;
-  var nameV = document.getElementById('contactNameInput').value;
-  var emailV = document.getElementById('emailAddressInput').value;
-  var subjectV = document.getElementsByName('message-subject');
-  var messageV = document.getElementById('message').value;
-  var errorArr = [];
+  // setup the ajax request
+  $.ajax({
+      url: url,
+      data: data,
+      dataType: 'json',
+      success: function() {
+          if(rsp.success) {
+              alert('form has been posted successfully');
+          }
+      }
+  });
 
-  // check name
-  if (nameV == '' || nameV == null) {
-    errorArr.push('<br>You must enter your name');
-    errorsPresentInDoc = 1;
-  }
-
-  // check email
-  if (emailV == '' || emailV == null) {
-    errorArr.push('<br>You must enter your email address');
-    errorsPresentInDoc = 1;
-  }
-
- // check subject radios
-  for (var j=0; j<subjectV.length; j++) {
-    if (subjectV[j].checked) {
-      radioErrorsNotPresent = 1;
-      break;
-    }
-  }
-  if (!radioErrorsNotPresent)  {
-    errorArr.push('<br>You must select a subject');
-    errorsPresentInDoc = 1;
-  }
-
-  if (messageV == '' || messageV == null) {
-    errorArr.push('<br>You must enter a message');
-    errorsPresentInDoc = 1;
-  }
-
-  // print validation outcome
-  if (!errorsPresentInDoc) {
-    document.getElementById('contactForm').innerHTML='<p id=\'successId\'>The information has been submitted!</p>';
-  }
-  else {
-    document.getElementById('errorSection').innerHTML='Error!\n' + errorArr.toString();
-  }
-
+  // return false so the form does not actually
+  // submit to the page
   return false;
-};
-
-// function checkLibs() {
-//   var errorsPresentInDocML = 0;
-//   var noun1 = document.getElementById('firstNoun').value;
-//   var noun2 = document.getElementById('secondNoun').value;
-//   var noun3 = document.getElementById('thirdNoun').value;
-//   var noun4 = document.getElementById('fourthNoun').value;
-//   var adjectiveV = document.getElementById('adjective').value;
-//   var errorArrML = [];
-//
-//   if (noun1 == '' || noun1 == null) {
-//     errorArr.push('<br>You must enter a noun in the first box');
-//     errorsPresentInDoc = 1;
-//   }
-//
-//   if (noun2 == '' || noun2 == null) {
-//     errorArr.push('<br>You must enter a noun in the second box');
-//     errorsPresentInDoc = 1;
-//   }
-//
-//   if (noun3 == '' || noun3 == null) {
-//     errorArr.push('<br>You must enter a noun in the third box');
-//     errorsPresentInDoc = 1;
-//   }
-//
-//   if (noun4 == '' || noun4 == null) {
-//     errorArr.push('<br>You must enter a noun in the fourth box');
-//     errorsPresentInDoc = 1;
-//   }
-//
-//   if (adjectiveV == '' || adjectiveV == null) {
-//     errorArr.push('<br>You must enter an adjective in the fifth box');
-//     errorsPresentInDoc = 1;
-//   }
-//
-//   // print outcome
-//   if (!errorsPresentInDoc) {
-//     document.getElementById('contactForm').innerHTML='<p id=\'successId\'>The information has been submitted!</p>';
-//   }
-//   else {
-//     document.getElementById('errorSection').innerHTML='Error!\n' + errorArr.toString();
-//   }
-//
-//   return false;
-// };
+}

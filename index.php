@@ -201,10 +201,10 @@
 			</div>
 		</div> <!--div class="container" id="mad-libs"-->
 
-		<div class="container" id="contact">
+		<div class="container" action="#contact" id="contact">
 			<h2>Contact</h2>
 			<p>&#9993; You may email me at <a href="mailto:jmf133@pitt.edu">jmf133@pitt.edu</a> or use the handy, dandy form below.</p>
-			<form id="contactForm" action="mailto:jmf133@pitt.edu" method="post">
+			<form id="contactForm" action="script.php" method="post">
 	      <fieldset class="short-text-input">
 	        <div class="name">
 	          Your name:
@@ -227,7 +227,7 @@
 	      <fieldset class="text-holder">
 	        <div class="the-message">
 	          Message:<br>
-	          <textarea cols=40% rows="10" name="messageArea" id="message" class="black-text"></textarea>
+	          <textarea cols=40% rows="10" name="message-area" id="message" class="black-text"></textarea>
 	        </div>
 	      </fieldset>
 				<div id="errorSection"></div>
