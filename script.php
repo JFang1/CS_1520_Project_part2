@@ -1,20 +1,14 @@
 <?php
-  $db = new mysqli('localhost', 'root', '', 'my_website_form');
-  if ($db->connect_error) {
-    die ("Could not connect to db " . $db->connect_error);
-  }
-  else {
-    echo "<p>Connect success!</p>";
-  }
-  $name = $_REQUEST['contact-name'];
-  $email = $_REQUEST['email-address'];
-  $subject = $_REQUEST['message-subject'];
-  $message = $_REQUEST['message-area'];
-  $result = $db->query("INSERT INTO messages (sender, email address, subject, message) VALUES ($name, $email, $subject, $message)");
-  if ($result === TRUE) {
-    echo "<p>DB submission success!</p>";
-  }
-  else {
-    echo "<p>Error: " . $result . "</p>";
-  }
+// Fetching Values From URL
+$nameP = $_POST['name'];
+$emailP = $_POST['email'];
+$subjectP = $_POST['subject'];
+$messageP = $_POST['message'];
+$connection = mysql_connect("localhost", "root", ""); // Establishing Connection with Server..
+$db = mysql_select_db("my_website_form", $connection); // Selecting Database
+if (isset($_POST['name'])) {
+$query = mysql_query("insert into messages (name, email, subject, messsage) values ('$nameP', '$emailP', '$subjectP','$messageP')");
+echo "Form Submitted succesfully";
+}
+mysql_close($connection); // Connection Closed
 ?>

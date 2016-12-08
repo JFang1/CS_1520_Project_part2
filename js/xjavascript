@@ -35,7 +35,7 @@ $(document).ready(function() {
   });
 
   $('#contactForm').submit(function(event) {
-    //event.preventDefault();
+    event.preventDefault();
 
     var radioErrorsNotPresent = 0;
     var errorsPresentInDoc = 0;
@@ -44,7 +44,6 @@ $(document).ready(function() {
     var subjectV = document.getElementsByName('message-subject');
     var messageV = document.getElementById('message').value;
     var errorArr = [];
-    var subV;
 
     // check name
     if (nameV == '' || nameV == null) {
@@ -62,7 +61,6 @@ $(document).ready(function() {
     for (var j=0; j<subjectV.length; j++) {
       if (subjectV[j].checked) {
         radioErrorsNotPresent = 1;
-        subV = subjectV[j].value;
         break;
       }
     }
@@ -85,21 +83,20 @@ $(document).ready(function() {
       document.getElementById('errorSection').innerHTML='Error!\n' + errorArr.toString();
     }
 
-    var dataString = '&name=' + nameV + '&email=' + emailV + '&subject=' + subV + '&message=' + messageV;
-
     // fetch submission destination
     var url = $('#contactForm').attr('action');
-
+    // get form data
+    //var data = $('#contactForm').serializeArray();
+    var data = $('#contactNameInput').serializeArray();
+  
     // setup the ajax request
     $.ajax({
-      type: "POST",
       url: url,
-      data: dataString,
-      cache: false,
+      data: data,
       dataType: 'json',
-      success: function(html) {
+      success: function() {
         if(rsp.success) {
-          alert('form has been posted successfully: ' + html);
+          alert('form has been posted successfully');
         }
       },
       // error: function(errData) {
