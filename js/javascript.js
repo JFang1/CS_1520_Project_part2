@@ -35,7 +35,7 @@ $(document).ready(function() {
   });
 
   $('#contactForm').submit(function(event) {
-    //event.preventDefault();
+    event.preventDefault();
 
     var radioErrorsNotPresent = 0;
     var errorsPresentInDoc = 0;
@@ -80,32 +80,29 @@ $(document).ready(function() {
     // print validation outcome
     if (!errorsPresentInDoc) {
       document.getElementById('contactForm').innerHTML='<p id=\'successId\'>No form errors!</p>';
+      var dataString = '&name=' + nameV + '&email=' + emailV + '&subject=' + subV + '&message=' + messageV;
+
+      // fetch submission destination
+      var url = $('#contactForm').attr('action');
+
+      // setup the ajax request
+      $.ajax({
+        type: "POST",
+        url: url,
+        data: dataString,
+        cache: false,
+        dataType: 'text',
+        success: function(html) {
+          alert('form has been posted successfully: ' + html);
+        },
+        error: function(errData) {
+          alert('Error: ' + errData);
+        }
+      });
     }
     else {
       document.getElementById('errorSection').innerHTML='Error!\n' + errorArr.toString();
     }
-
-    var dataString = '&name=' + nameV + '&email=' + emailV + '&subject=' + subV + '&message=' + messageV;
-
-    // fetch submission destination
-    var url = $('#contactForm').attr('action');
-
-    // setup the ajax request
-    $.ajax({
-      type: "POST",
-      url: url,
-      data: dataString,
-      cache: false,
-      dataType: 'json',
-      success: function(html) {
-        if(rsp.success) {
-          alert('form has been posted successfully: ' + html);
-        }
-      },
-      // error: function(errData) {
-      //   alert('Error: ' + errData);
-      // }
-    });
 
     return false;
   });
