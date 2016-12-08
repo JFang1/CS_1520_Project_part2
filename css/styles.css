@@ -55,9 +55,11 @@ form {
   color: #fff;
 }
 
-#hideThisAtFirst {
+#hideAtFirst {
   background-color: black;
   color: white;
+  visibility: hidden;
+  padding: 5px;
 }
 
 .black-text {

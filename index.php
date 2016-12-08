@@ -169,10 +169,13 @@
 					An adjective:
 					<input type="text" name="adjective" id="adjective" class="black-text"><br>
 					<br><br>
-					<input type="submit" value="Show this mad lib!" id="madLibButton" class="black-text"><br><br>
+					<fieldset id="buttonHolder">
+						<input type="submit" value="Process data" id="madLibButton" class="black-text"><br>
+						<input type="button" value="Show this mad lib!" id="unhide" class="black-text"><br><br>
+					</fieldset>
 				</form>
 			</div>
-			<div class="col-sm-6"  id="hideThisAtFirst" class="white-text">
+			<div class="col-sm-6"  id="hideAtFirst" class="white-text">
 				<?php
 					$noun1 = $_REQUEST['first-noun'];
 					$noun2 = $_REQUEST['second-noun'];

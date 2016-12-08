@@ -34,6 +34,10 @@ $(document).ready(function() {
     $('#enter').fadeIn();
   });
 
+  $('#unhide').click(function() {
+    $('#hideAtFirst').css("visibility", "visible");
+  });
+
   $('#contactForm').submit(function(event) {
     event.preventDefault();
 
@@ -108,9 +112,5 @@ $(document).ready(function() {
     }
 
     return false;
-  });
-
-  $('#madLibsForm').submit(function(e) {
-    $('#hideThisAtFirst').fadeIn();
   });
 });
