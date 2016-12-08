@@ -111,6 +111,6 @@ $(document).ready(function() {
   });
 
   $('#madLibsForm').submit(function(e) {
-    $('#hideThisAtFirst').style.color="white";
+    $('#hideThisAtFirst').show();
   });
 });
