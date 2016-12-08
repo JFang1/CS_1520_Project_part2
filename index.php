@@ -174,7 +174,7 @@
 			</div>
 			<div class="col-sm-6"  id="hideAtFirst" class="white-text">
 				<?php
-					error_reporting(0);
+					error_reporting(0); // Referenced in order to hide php notices: http://stackoverflow.com/questions/930154/stop-notices-from-displaying-in-php
 					$noun1 = $_REQUEST['first-noun'];
 					$noun2 = $_REQUEST['second-noun'];
 					$noun3 = $_REQUEST['third-noun'];
