@@ -172,7 +172,7 @@
 					<input type="submit" value="Show this mad lib!" id="madLibButton" class="black-text"><br><br>
 				</form>
 			</div>
-			<div class="col-sm-6"  id="hideThisAtFirst">
+			<div class="col-sm-6"  id="hideThisAtFirst" class="white-text">
 				<?php
 					$noun1 = $_REQUEST['first-noun'];
 					$noun2 = $_REQUEST['second-noun'];
