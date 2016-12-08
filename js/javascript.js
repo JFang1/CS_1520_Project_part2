@@ -85,18 +85,21 @@ $(document).ready(function() {
       // fetch submission destination
       var url = $('#contactForm').attr('action');
 
-      // setup the ajax request
-      $.ajax({
+      /* Referenced:
+       * http://stackoverflow.com/questions/5143191/inserting-into-mysql-from-php-jquery-ajax
+       * https://www.sanwebe.com/2012/04/ajax-add-delete-sql-records-jquery-php
+       */
+      $.ajax( {
         type: "POST",
         url: url,
         data: dataString,
         cache: false,
         dataType: 'text',
-        success: function(html) {
-          alert('form has been posted successfully: ' + html);
+        success: function(result) {
+          alert('Result: ' + result);
         },
         error: function(errData) {
-          alert('Error: ' + errData);
+          alert('AJAX error: ' + errData);
         }
       });
     }
@@ -111,6 +114,3 @@ $(document).ready(function() {
     $('#hideThisAtFirst').style.color="white";
   });
 });
-
-
-// Referenced http://stackoverflow.com/questions/5143191/inserting-into-mysql-from-php-jquery-ajax

@@ -204,7 +204,7 @@
 		<div class="container" action="#contact" id="contact">
 			<h2>Contact</h2>
 			<p>&#9993; You may email me at <a href="mailto:jmf133@pitt.edu">jmf133@pitt.edu</a> or use the handy, dandy form below.</p>
-			<form id="contactForm" action="script.php" method="post">
+			<form id="contactForm" action="./php/script.php" method="post">
 	      <fieldset class="short-text-input">
 	        <div class="name">
 	          Your name:
