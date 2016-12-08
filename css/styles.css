@@ -58,7 +58,6 @@ form {
 #hideAtFirst {
   background-color: black;
   color: white;
-  visibility: hidden;
   padding: 10px;
 }
 

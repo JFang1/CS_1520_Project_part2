@@ -60,7 +60,7 @@
 	  			<p><br>I am currently a computer engineering student scheduled to graduate in April 2017 and am open to pretty much anything.</p>
 	  			<p>I actively participate in outreach events with the Society of Women Engineers (SWE), have mentored underclassmen,
 	  				and am currently serving as the Vice President for Pitt's chapter of Eta Kappa Nu, the IEEE honor society.</p>
-	  			<a href="./other_files/resume.pdf">Click here for my resume</a>
+	  			<a href="./other_files/resume.pdf" target="_blank">Click here for my resume</a>
 				</div>
 			</div>
 		</div> <!--div class="container" id="about"-->
@@ -169,14 +169,12 @@
 					An adjective:
 					<input type="text" name="adjective" id="adjective" class="black-text"><br>
 					<br><br>
-					<fieldset id="buttonHolder">
-						<input type="submit" value="Process data" id="madLibButton" class="black-text"><br>
-						<input type="button" value="Show this mad lib!" id="unhide" class="black-text"><br><br>
-					</fieldset>
+					<input type="submit" value="Show MadLib!" id="madLibButton" class="black-text"><br>
 				</form>
 			</div>
 			<div class="col-sm-6"  id="hideAtFirst" class="white-text">
 				<?php
+					error_reporting(0);
 					$noun1 = $_REQUEST['first-noun'];
 					$noun2 = $_REQUEST['second-noun'];
 					$noun3 = $_REQUEST['third-noun'];

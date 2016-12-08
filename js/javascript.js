@@ -34,10 +34,6 @@ $(document).ready(function() {
     $('#enter').fadeIn();
   });
 
-  $('#unhide').click(function() {
-    $('#hideAtFirst').css("visibility", "visible");
-  });
-
   $('#contactForm').submit(function(event) {
     event.preventDefault();
 
