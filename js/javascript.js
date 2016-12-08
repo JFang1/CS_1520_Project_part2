@@ -1,6 +1,6 @@
 (function() {
-    $(".navbar").hide();
-    $('#enter').hide();
+  $(".navbar").hide();
+  $('#enter').hide();
 })();
 
 $(document).ready(function() {
