@@ -27,13 +27,13 @@ In addition to all of the above, this project helped me to refine my overall web
 * implemented a more effectively animated navbar
 * navbar is now responsive to size of screen
 * entire site is now responsive to the size of the screen
-* otherwise improved appearance
+* otherwise improved appearance through Bootstrap and CSS
 * created a sort of landing area as an introduction to the site, rather than just showing my "About Me" at the top
-* contact form sends submitted messages to a mysql database
+* contact form sends submitted messages to a MySQL database
 * added something interactive: madLibs
-* link to resume now opens in a new tab
-* added more content (links and stuff about me in addition to whatever else is in this list)
-* implemented an accordian for my links
-* more javascript for implementing cool effects (the "Enter" does not initially appear on page load)
+* link to resume now opens in a new tab instead of the existing one
+* added more content (links and stuff about me, in addition to whatever else is in this list)
+* implemented an accordion for my links
+* more javascript for implementing cool effects (the "Enter" in the landing area does not initially appear on page load)
 * used actual PHP
-* file-reading is used in the madlibs game
+* file-reading and string manipulation are used in the madlibs game
