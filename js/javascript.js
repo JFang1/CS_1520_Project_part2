@@ -79,7 +79,7 @@ $(document).ready(function() {
 
     // print validation outcome
     if (!errorsPresentInDoc) {
-      document.getElementById('contactForm').innerHTML='<p id=\'successId\'>No form errors!</p>';
+      document.getElementById('contactForm').innerHTML='<p id=\'successId\'>Message submitted successfully!</p>';
       var dataString = '&name=' + nameV + '&email=' + emailV + '&subject=' + subV + '&message=' + messageV;
 
       // fetch submission destination
